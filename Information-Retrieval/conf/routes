@@ -1,0 +1,21 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+
+GET     /search/single/:key                         controllers.BooleanSearchController.search(key: String)
+GET     /search/and/:keyWord1/:keyWord2             controllers.BooleanSearchController.searchAnd(keyWord1: String,keyWord2: String)
+GET     /search/or/:key1/:key2                      controllers.BooleanSearchController.searchOr(key1: String,key2 :String)
+GET     /search/and-not/:key1/:key2                 controllers.BooleanSearchController.searchAndNot(key1: String,key2 :String)
+GET     /search/or-not/:key1/:key2                  controllers.BooleanSearchController.searchOrNot(key1: String,key2 :String)
+
+GET     /search/ranked/:key                         controllers.RankedSearchController.search(key: String)
+
+
+#PUT     /search/buildTest                               controllers.BooleanSearchController.buildTest()
+PUT     /search/build                               controllers.BooleanSearchController.build()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
